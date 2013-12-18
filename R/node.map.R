@@ -50,7 +50,6 @@ if(is.null(mol.data)){
 
 
       plot.data=sapply(1:n.nodes, function(i){
-#        if(i==5) browser()
         kns=node.data$kegg.names[[i]]
         if(node.types[1]=="gene" & entrez.gnodes) items=as.numeric(kns)
         else items=kns
