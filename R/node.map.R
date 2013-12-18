@@ -50,6 +50,7 @@ if(is.null(mol.data)){
 
 
       plot.data=sapply(1:n.nodes, function(i){
+#        if(i==5) browser()
         kns=node.data$kegg.names[[i]]
         if(node.types[1]=="gene" & entrez.gnodes) items=as.numeric(kns)
         else items=kns
@@ -65,7 +66,11 @@ if(is.null(mol.data)){
         } else {
           node.sum=eval(as.name(node.sum))
                                         #      edata=apply(cbind(mol.data[as.character(items[hit]),]), 2, node.sum, na.rm=T)
-          edata=apply(cbind(mol.data[as.character(items[hit]),]), 2, node.sum, na.rm=T)
+          edata=apply(cbind(mol.data[as.character(items[hit]),]), 2, function(x){
+            x=x[!is.na(x)]
+            if(length(x)<1) return(NA)
+            else return(node.sum(x, na.rm=F))
+          })
           return(c(kns[hit][1], spacials[i,], edata))
         }    
       })
