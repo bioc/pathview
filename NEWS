@@ -1,3 +1,12 @@
+VERSION 1.2.4
+-------------
+
+  o updated korg to included over 600 newly added species. Pathview
+    can work with 2970 species now.
+
+  o Make returned values from pathview, keggview.native and
+    keggview.graph functions invisible.
+
 VERSION 1.2.3
 -------------
 
