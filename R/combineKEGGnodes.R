@@ -22,8 +22,12 @@ function (nodes, graph, combo.node)
     nt=unique(nodeType[nodes])
     len.nt=length(nt)
     if("ortholog" %in% nt) len.nt=len.nt-1
-    if(len.nt>1) stop("Nodes are not the same type, hence invalid to combine!")
-
+    if(len.nt>1) {
+      warn.msg="Nodes are not the same type, hence unable to combine!"
+      message("Warning: ", warn.msg)
+      return(graph)
+    }
+    
     if(combo.node %in% grp.nodes){
 
       combgraph <- combineNodes(c(nodes,combo.node), graph, combo.node)

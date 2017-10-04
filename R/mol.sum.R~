@@ -1,5 +1,5 @@
 mol.sum <-
-function(mol.data, id.map, gene.annotpkg="org.Hs.eg.db", sum.method=c("sum","mean", "median", "max", "max.abs", "random")[1]){
+function(mol.data, id.map, gene.annotpkg="org.Hs.eg.db", sum.method=c("sum","mean", "median", "max", "max.abs", "random")[2]){
   if(is.character(mol.data)){
     gd.names=mol.data
     mol.data=rep(1, length(mol.data))

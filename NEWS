@@ -1,3 +1,17 @@
+VERSION 1.17.7
+-------------
+  
+  o updated combineKEGGnodes.R, i.e. changed the stop error to a
+    warning message when a group node include different node types,
+    i.e. both gene and compound. This problematic KEGG node definition
+    does exist in pathway 04136 Autophagy - other, and caused error
+    when calling pathview with kegg.native = F.
+
+  o fixed bug in mol.sum introduced at 1.15.1, i.e. indexing using
+    which(eff.idx). This problem only affect direct call of mol.sum
+    with sum.method other than "sum" and "mean".
+
+
 VERSION 1.17.1
 -------------
   
