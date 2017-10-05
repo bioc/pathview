@@ -1,7 +1,7 @@
 Package: pathview
 Type: Package
 Title: a tool set for pathway based data integration and visualization
-Version: 1.17.7
+Version: 1.16.7
 Date: 2017-09-26
 Author: Weijun Luo
 Maintainer: Weijun Luo <luo_weijun@yahoo.com>
