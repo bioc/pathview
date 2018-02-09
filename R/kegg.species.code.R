@@ -1,7 +1,10 @@
 kegg.species.code <-
 function(species="hsa", na.rm=FALSE, code.only=TRUE){
       nspec=length(species)
-      if(!exists("korg")) data(korg,  package="pathview")
+      if(!exists("korg")){
+        si=try(load(url("https://pathview.uncc.edu/data/korg.rda")))
+        if(class(si)=="try-error") data(korg, package="pathview")
+      }
 
       ridx=match(species, korg[,1:5]) %% nrow(korg)
       nai=is.na(ridx)

@@ -1,3 +1,10 @@
+VERSION 1.18.1
+-------------
+  
+  o korg now include 5245 KEGG species. To speed up pathview package
+    loading, an updated version of korg is now checked out from
+    Pathview Web server when it is acutally used.
+
 VERSION 1.17.7
 -------------
   
