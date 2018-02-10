@@ -4,6 +4,7 @@
     data(gene.idtype.list, package ="pathview")
     data(gene.idtype.bods, package ="pathview")
     data(cpd.simtypes, package ="pathview")
+    data(korg, package ="pathview")
 #    korg=try(read.delim(file="https://pathview.uncc.edu/data/korg.tsv", sep="\t"))
 #    if(class(korg)=="data.frame"){
 #    korg$ncbi.geneid=as.character(korg$ncbi.geneid)
