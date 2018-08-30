@@ -103,14 +103,16 @@ Two options:
 
 Simple way: install with Bioconductor installation script \R{biocLite} directly (this included all dependencies automatically too):
 <<install, echo=TRUE, eval=FALSE>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite("pathview")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("pathview")
 @ 
 
 Or a bit more complexer: install through R-forge or manually, but require dependence packages to be installed using Bioconductor first:
 <<<install, echo=TRUE, eval=FALSE>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite(c("Rgraphviz", "png", "KEGGgraph", "org.Hs.eg.db"))
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install(c("Rgraphviz", "png", "KEGGgraph", "org.Hs.eg.db"))
 @ 
 
 Then install \Rpackage{pathview} through R-forge.

@@ -12,8 +12,9 @@ geneannot.map <- function(in.ids, in.type, out.type, org="Hs", pkg.name=NULL, un
 
   pkg.on=try(requireNamespace(pkg.name),silent = TRUE)
   if(!pkg.on) {
-    source("http://bioconductor.org/biocLite.R")
-    biocLite(pkg.name, suppressUpdates =TRUE)
+    if (!requireNamespace("BiocManager", quietly=TRUE))
+        install.packages("BiocManager")
+    BiocManager::install(pkg.name, suppressUpdates =TRUE)
     pkg.on=try(requireNamespace(pkg.name),silent = TRUE)
     if(!pkg.on) stop(paste("Fail to install/load gene annotation package ", pkg.name, "!",  sep=""))
   }
