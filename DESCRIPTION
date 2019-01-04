@@ -1,7 +1,7 @@
 Package: pathview
 Type: Package
 Title: a tool set for pathway based data integration and visualization
-Version: 1.23.0
+Version: 1.23.1
 Date: 2018-02-10
 Author: Weijun Luo
 Maintainer: Weijun Luo <luo_weijun@yahoo.com>
@@ -14,7 +14,7 @@ Description: Pathview is a tool set for pathway based data integration
         with the mapped data. In addition, Pathview also seamlessly
         integrates with pathway and gene set (enrichment) analysis tools for
         large-scale and fully automated analysis.
-biocViews: Pathways, GraphAndNetwork, Visualization,
+biocViews: ImmunoOncology, Pathways, GraphAndNetwork, Visualization,
         GeneSetEnrichment, DifferentialExpression, GeneExpression,
         Microarray, RNASeq, Genetics, Metabolomics, Proteomics,
         SystemsBiology, Sequencing
