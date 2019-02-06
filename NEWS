@@ -1,4 +1,4 @@
-VERSION 1.23.2
+VERSION 1.23.2 (1.22.2)
 -------------
   
   o fix error and warning cause by geneannot.map() function. change
