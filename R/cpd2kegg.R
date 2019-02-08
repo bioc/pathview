@@ -7,7 +7,7 @@ cpd.type=tolower(c(names(rn.list),"name"))
   if(!tolower(in.type) %in% cpd.type) stop("Incorrect type!")
   kg.idx=grep("kegg", cpd.type)
   if(in.type %in% cpd.type[kg.idx]) stop("A native KEGG compound ID type, no need to map!")
-  if(in.type[1]=="name") {
+  if(in.type=="name") {
     kg.accs=cpdname2kegg(in.ids)
   } else kg.accs=cpdidmap(in.ids, in.type=in.type, out.type="KEGG")
   

@@ -1,10 +1,10 @@
-VERSION 1.23.2 (1.22.2)
+VERSION 1.23.3 (1.22.3)
 -------------
   
   o fix error and warning cause by geneannot.map() function. change
-    if(in.type == out.type) to if(in.type[1] == out.type). change
+    if(in.type == out.type) to if(all(in.type == out.type)). change
     biocLite installation to BiocManager::install. make similar changes
-    in sim.mol.data(), cpd2kegg() and cpdkegg2name() functions.
+    in sim.mol.data() function.
 
   o update NAMESPACE file on importFrom lines on AnnotationDbi and
     BiocManager.

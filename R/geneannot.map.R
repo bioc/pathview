@@ -29,7 +29,7 @@ geneannot.map <- function(in.ids, in.type, out.type, org="Hs", pkg.name=NULL, un
   if(any(eii)) in.type[eii]="ENTREZID"
   eio=out.type==toupper("entrez") | out.type==toupper("eg")
   if(any(eio)) out.type[eio]="ENTREZID"
-  if(in.type[1]==out.type) stop("in.type and out.type are the same, no need to map!")
+  if(all(in.type==out.type)) stop("in.type and out.type are the same, no need to map!")
   
   nin=length(in.type)
   if(nin!=1) stop("in.type must be of length 1!")

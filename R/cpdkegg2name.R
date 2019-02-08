@@ -12,7 +12,7 @@ function(in.ids, in.type=c("KEGG", "KEGG COMPOUND accession")[1]){
     in.type=gsub(" accession", "", in.type)
 
   data(cpd.names)
-    if(in.type[1]=="kegg") sel.rn=1:nrow(cpd.names)
+    if(in.type=="kegg") sel.rn=1:nrow(cpd.names)
   else sel.rn=cpd.names$SOURCE==in.type
     sel.cn=c("ACCESSION_NUMBER", "NAME")
       cpd.names=as.matrix(cpd.names[sel.rn, sel.cn])
