@@ -12,9 +12,9 @@ geneannot.map <- function(in.ids, in.type, out.type, org="Hs", pkg.name=NULL, un
 
   pkg.on=try(requireNamespace(pkg.name),silent = TRUE)
   if(!pkg.on) {
-    if (!requireNamespace("BiocManager", quietly=TRUE))
-        install.packages("BiocManager")
-    BiocManager::install(pkg.name, suppressUpdates =TRUE)
+#    source("http://bioconductor.org/biocLite.R")
+#    biocLite(pkg.name, suppressUpdates =TRUE)
+    BiocManager::install(pkg.name, update=FALSE)
     pkg.on=try(requireNamespace(pkg.name),silent = TRUE)
     if(!pkg.on) stop(paste("Fail to install/load gene annotation package ", pkg.name, "!",  sep=""))
   }
@@ -29,7 +29,7 @@ geneannot.map <- function(in.ids, in.type, out.type, org="Hs", pkg.name=NULL, un
   if(any(eii)) in.type[eii]="ENTREZID"
   eio=out.type==toupper("entrez") | out.type==toupper("eg")
   if(any(eio)) out.type[eio]="ENTREZID"
-  if(in.type==out.type) stop("in.type and out.type are the same, no need to map!")
+  if(all(in.type==out.type)) stop("in.type and out.type are the same, no need to map!")
   
   nin=length(in.type)
   if(nin!=1) stop("in.type must be of length 1!")
@@ -43,7 +43,7 @@ geneannot.map <- function(in.ids, in.type, out.type, org="Hs", pkg.name=NULL, un
   in.ids0=in.ids
   in.ids <- unique(as.character(in.ids))#unique necessary for select()# if(unique.map)
   out.ids=character(length(in.ids))
-  res <- try(suppressWarnings(select(db.obj,
+  res <- try(suppressWarnings(AnnotationDbi::select(db.obj,
                                      keys = in.ids,
                                      keytype = in.type,
                                      columns=c(in.type, out.type))))

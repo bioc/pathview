@@ -65,9 +65,9 @@ sim.mol.data=function(mol.type=c("gene","gene.ko","cpd")[1], id.type=NULL, speci
         pkg.name=bods[idx,1]
         pkg.on=requireNamespace(pkg.name)
         if(!pkg.on) {
-          if (!requireNamespace("BiocManager", quietly=TRUE))
-              install.packages("BiocManager")
-          BiocManager::install(pkg.name, suppressUpdates =TRUE)
+#          source("http://bioconductor.org/biocLite.R")
+#          biocLite(pkg.name, suppressUpdates =TRUE)
+          BiocManager::install(pkg.name, update=FALSE)
           pkg.on=requireNamespace(pkg.name)
           if(!pkg.on) stop(paste("Fail to install/load gene annotation package ", pkg.name, "!",  sep=""))
         }
