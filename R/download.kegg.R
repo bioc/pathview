@@ -36,7 +36,7 @@ download.kegg <-
         xml.status=try(download.file(xml.url, xml.target, quiet=T), silent=T)
 
         if(xml.status!=0) all.status[i]="failed"
-        if(class(xml.status)=="try-error"){
+        if(class(xml.status)[1]=="try-error"){
           warn.msg=sprintf(warn.fmt.xml, pathway.id[i])
           message("Warning: ", warn.msg)
           unlink(xml.target)
@@ -53,7 +53,7 @@ download.kegg <-
         png.status=suppressWarnings(try(download.file(png.url, png.target, quiet=T, mode="wb"), silent=T))
 
         if(png.status!=0) all.status[i]="failed"
-        if(class(png.status)=="try-error"){
+        if(class(png.status)[1]=="try-error"){
           warn.msg=sprintf(warn.fmt.png, pathway.id[i])
           message("Warning: ", warn.msg)
           unlink(png.target)

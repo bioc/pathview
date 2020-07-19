@@ -1,6 +1,6 @@
 node.info <-
 function(object, short.name=TRUE){
-  cobj=class(object)
+  cobj=class(object)[1]
   if(cobj=="character"){
     object <-parseKGML2(object)
     ndata=nodes(object)    

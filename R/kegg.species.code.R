@@ -7,7 +7,7 @@ kegg.species.code <-
     nai=is.na(ridx)
     if(sum(nai)>0) {
       si=try(load(url("https://pathview.uncc.edu/data/korg.1.rda")))
-      if(class(si)!="try-error"){
+      if(class(si)[1]!="try-error"){
         ridx.1=match(species, korg.1[,1:5]) %% nrow(korg.1)
         nai.1=is.na(ridx.1)
         if(sum(nai.1)<sum(nai)){

@@ -47,7 +47,7 @@ geneannot.map <- function(in.ids, in.type, out.type, org="Hs", pkg.name=NULL, un
                                      keys = in.ids,
                                      keytype = in.type,
                                      columns=c(in.type, out.type))))
-  if(class(res)=="data.frame"){
+  if(class(res)[1]=="data.frame"){
     
     res <- res[, c(in.type, out.type)]
 

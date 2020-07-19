@@ -1,4 +1,19 @@
-VERSION 1.23.3 (1.22.3)
+VERSION 1.29.1/1.28.1
+-------------
+
+  o developmental version now available on GitHub at:
+    https://github.com/datapplab/pathview
+  
+  o fixed warning on "requireNamespace(pkg.name)" in geneannot.map.R
+    and sim.mol.data.R. Now "import" from org.Hs.eg.db, instead of
+    "suggest" it. Also import more functions and class from
+    AnnotationDbi.
+
+  o prevented potential error caused by class(exprs) == "data.frame"
+    or "class()==" if conditions in multiple functions. class(exprs)
+    now returns a vector of length 2, which caused the error.
+
+VERSION 1.23.3/1.22.3
 -------------
   
   o fix error and warning cause by geneannot.map() function. change

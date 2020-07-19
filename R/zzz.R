@@ -6,7 +6,7 @@
     data(cpd.simtypes, package ="pathview")
     data(korg, package ="pathview")
 #    korg=try(read.delim(file="https://pathview.uncc.edu/data/korg.tsv", sep="\t"))
-#    if(class(korg)=="data.frame"){
+#    if(class(korg)[1]=="data.frame"){
 #    korg$ncbi.geneid=as.character(korg$ncbi.geneid)
 #    korg=as.matrix(korg)
 #  } else data(korg, package ="pathview")

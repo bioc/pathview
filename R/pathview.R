@@ -193,7 +193,7 @@ function(
 
   if(kegg.native){
     node.data=try(node.info(xml.file[i]), silent=T)
-    if(class(node.data)=="try-error"){
+    if(class(node.data)[1]=="try-error"){
       warn.msg=sprintf(warn.fmt, xml.file[i])
       message("Warning: ", warn.msg)
       return(invisible(0))
@@ -212,7 +212,7 @@ function(
   } else {
     gR1=try(parseKGML2Graph2(xml.file[i], genes=F, expand=expand.node, split.group=split.group), silent=T)
     node.data=try(node.info(gR1), silent=T)
-    if(class(node.data)=="try-error"){
+    if(class(node.data)[1]=="try-error"){
       warn.msg=sprintf(warn.fmt, xml.file[i])
       message("Warning: ", warn.msg)
       return(invisible(0))
