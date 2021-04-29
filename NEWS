@@ -1,3 +1,21 @@
+VERSION 1.31.3/1.30.3
+-------------
+
+  o fix bug in mol.sum with single gene data reported by
+    easygsea. Similarly add drop=F to a few other lines in mol.sum and
+    node.map.
+  
+VERSION 1.31.2/1.30.2
+-------------
+
+  o solve the check error due to the change related to KEGGEdgeSubtype
+    in KEGGgraph package (version 1.51.1).
+  
+VERSION 1.31.1/1.30.1
+-------------
+  
+  o korg now include 6833 KEGG species or 1588 new species beyond 2017.
+
 VERSION 1.29.1/1.28.1
 -------------
 
